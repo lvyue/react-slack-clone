@@ -12,8 +12,7 @@ export default ({ state, actions }, { id, token }) =>
     tokenProvider: new Chatkit.TokenProvider({ url: url(id, token) }),
     instanceLocator,
     userId: id,
-  })
-    .connect({
+  }).connect({
       onUserStartedTyping: actions.isTyping,
       onUserStoppedTyping: actions.notTyping,
       onAddedToRoom: actions.subscribeToRoom,
